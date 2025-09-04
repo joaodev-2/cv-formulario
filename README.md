@@ -1,4 +1,4 @@
-````markdown
+
 # CV Formulário
 
 Aplicação em Laravel com banco de dados SQLite para envio de currículos. Inclui validação de dados, upload de arquivos (doc, docx, pdf), registro de IP e data/hora, envio de confirmação por e-mail via SMTP e testes automatizados com PHPUnit.
@@ -34,7 +34,7 @@ Aplicação em Laravel com banco de dados SQLite para envio de currículos. Incl
    ```bash
    git clone https://github.com/joaodev-2/cv-formulario.git
    cd cv-formulario
-````
+
 
 2. Instale as dependências:
 
