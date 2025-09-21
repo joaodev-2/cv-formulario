@@ -9,12 +9,13 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class JobApplicationTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function it_stores_a_valid_application()
     {
         Mail::fake();
@@ -42,7 +43,7 @@ class JobApplicationTest extends TestCase
         Mail::assertSent(JobApplicationReceived::class);
     }
 
-    /** @test */
+    #[Test]
     public function it_rejects_large_files()
     {
         $file = UploadedFile::fake()->create('cv.pdf', 2000, 'application/pdf'); // 2MB
@@ -59,7 +60,7 @@ class JobApplicationTest extends TestCase
         $response->assertSessionHasErrors('cv');
     }
 
-    /** @test */
+    #[Test]
     public function it_rejects_invalid_extensions()
     {
         $file = UploadedFile::fake()->create('virus.exe', 100, 'application/octet-stream');
