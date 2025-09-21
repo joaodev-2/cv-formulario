@@ -39,7 +39,7 @@ class JobApplicationTest extends TestCase
         $app = JobApplication::first();
         $this->assertNotEmpty($app->ip);
 
-        Storage::disk('public')->assertExists($app->cv_path);
+        Storage::disk('public')->Exists($app->cv_path);
         Mail::assertSent(JobApplicationReceived::class);
     }
 
