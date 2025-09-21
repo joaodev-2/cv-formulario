@@ -27,6 +27,16 @@ Aplicação em Laravel com banco de dados SQLite para envio de currículos. Incl
 
 ---
 
+## 🛠️ Requisitos
+
+Antes de instalar o projeto, verifique se possui as seguintes versões instaladas:
+
+- **PHP**: >= 8.4.12 
+- **SQLite**: >= 3.50.4  
+- **Node.js**: >= 22.19.0 
+
+---
+
 ## 🛠️ Instalação
 
 1. Clone o repositório:
@@ -40,6 +50,7 @@ Aplicação em Laravel com banco de dados SQLite para envio de currículos. Incl
 
    ```bash
    composer install
+   npm install
    ```
 
 3. Configure o ambiente:
@@ -61,6 +72,12 @@ Aplicação em Laravel com banco de dados SQLite para envio de currículos. Incl
    ```bash
    php artisan migrate
    ```
+7. Faça a build do frontend:
+
+   ```bash
+   npm run build
+   ```
+
 
 ---
 
