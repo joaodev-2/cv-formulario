@@ -12,7 +12,7 @@ class StoreJobApplicationRequest extends FormRequest
             'email'        => ['required','email','max:120'],
             'phone'        => ['required','string','max:30'],
             'desired_role' => ['required','string','max:120'],
-            'education'    => ['required','in:fundamental,médio,técnico,superior,pos,mestrado,doutorado'],
+            'education'    => ['required','in:fundamental,fundamental incompleto,médio,médio incompleto,técnico,técnico incompleto,superior,superior incompleto,pos,pos incompleto,mestrado,mestrado incompleto,doutorado,doutorado incompleto'],
             'notes'        => ['nullable','string','max:2000'],
             'cv'           => [
                 'required','file','max:1024',    // 1024 KB = 1MB
