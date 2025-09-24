@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <main class="flex w-250 max-w-7xl mx-auto rounded-3xl overflow-hidden">
+    <main class="flex w-250 max-w-7xl mx-auto rounded-3xl">
         
-        <div class="md:w-1/2 relative z-10 shadow-2xl rounded-3xl">
+        <div class="md:w-1/2 relative z-10 rounded-3xl">
             <div class="w-full h-full shadow-2xl bg-cover bg-center p-12 text-white flex flex-col justify-center rounded-3xl transform translate-x-5"
                 style="background-image: url('{{ Vite::asset('resources/images/imagem_gradient_form.png') }}')">
                 <h1 class="text-4xl font-bold leading-tight mb-3">Trabalhe Conosco</h1>
@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        <div class="w-full md:w-1/2 bg-white p-12 overflow-y-auto shadow-2xl" style="max-height: 90vh;">
+        <div class="w-full md:w-1/2 bg-white p-12 overflow-y-auto shadow-2xl rounded-r-3xl" style="max-height: 90vh;">
             <h2 class="text-3xl font-bold mb-8 text-gray-800">Envie seu currículo</h2>
 
             <form id="cvForm" action="{{ route('applications.store') }}" method="POST" enctype="multipart/form-data"
