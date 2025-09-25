@@ -22,6 +22,7 @@ class JobApplicationController extends Controller
             'desired_role' => $req->desired_role,
             'education'    => $req->education,
             'notes'        => $req->notes,
+            'linkedin_url' => $req->linkedin_url,
             'cv_path'      => $path,
             'ip'           => $req->ip(),
             'submitted_at' => now(),
