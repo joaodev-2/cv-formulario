@@ -12,8 +12,8 @@ return new class extends Migration {
             $t->string('phone');
             $t->string('desired_role');
             $t->string('education'); // select
-            $t->text('notes')->nullable(); // único opcional
-            $t->string('cv_path'); // caminho do arquivo
+            $t->string('linkedin_url')->nullable();
+            $t->string('cv_path');
             $t->string('ip', 45);
             $t->timestamp('submitted_at');
             $t->timestamps();
