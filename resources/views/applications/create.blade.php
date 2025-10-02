@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="w-full md:w-1/2 bg-white p-12 overflow-y-auto shadow-2xl rounded-r-3xl" style="max-height: 90vh;">
+        <div class="w-full md:w-1/2 bg-white p-12 overflow-hidden shadow-2xl rounded-r-3xl" style="max-height: 90vh;">
             <h2 class="text-3xl font-bold mb-8 text-gray-800">Envie seu currículo</h2>
 
             <form id="cvForm" action="{{ route('applications.store') }}" method="POST" enctype="multipart/form-data"
