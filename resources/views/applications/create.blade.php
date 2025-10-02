@@ -7,7 +7,25 @@
             <div class="w-full h-full shadow-2xl bg-cover bg-center p-12 text-white flex flex-col justify-center rounded-3xl transform translate-x-5"
                 style="background-image: url('{{ Vite::asset('resources/images/imagem_gradient_form.png') }}')">
                 <h1 class="text-4xl font-bold leading-tight mb-3">Trabalhe Conosco</h1>
-                <p class="text-xl text-gray-200">Faça parte da nossa equipe!</p>
+                <p class="text-xl text-gray-200 mb-12">Faça parte da nossa equipe!</p>
+
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
+                    <a href="https://github.com/joaodev-2" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/joaopedropvic" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-300 hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -19,7 +37,7 @@
                 @csrf
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome*</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome completo*</label>
                     <input name="name" value="{{ old('name') }}"
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                     @error('name')
@@ -56,8 +74,8 @@
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Escolaridade*</label>
-                    <select name="education" 
-                        class="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+                    <select name="education"
+                        class="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none text-sm"
                         style="background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%226 9 12 15 18 9%22></polyline></svg>'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.25em;">
 
                         <option value="" disabled @selected(!old('education'))>Selecione um nível</option>
@@ -75,14 +93,14 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">LinkedIn (opcional)</label>
                     <input type="url" name="linkedin_url" value="{{ old('linkedin_url') }}"
                         placeholder="https://linkedin.com/in/seu-perfil"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
                     @error('linkedin_url')
                         <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Arquivo (doc, docx, pdf | máx. 1MB)*</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Currículo (doc, docx, pdf | máx. 1MB)*</label>
                     <label for="cv"
                         class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-800 border border-gray-300 rounded-lg shadow-sm cursor-pointer hover:bg-gray-200 transition">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
@@ -90,7 +108,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 15v2a2 2 0 002 2h14a2 2 0 002-2v-2M7 10l5-5 5 5M12 5v12" />
                         </svg>
-                        Selecionar arquivo
+                        Anexar arquivo
                     </label>
                     <input id="cv" type="file" name="cv" accept=".doc,.docx,.pdf" class="hidden" required>
                     @error('cv')
